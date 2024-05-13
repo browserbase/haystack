@@ -13,15 +13,15 @@ class BrowserbaseFetcher:
     def run(
         self,
         urls: Sequence[str],
+        text_content: bool = False,
         session_id: Optional[str] = None,
         proxy: Optional[bool] = None,
-        text_content: bool = False,
     ):
         pages = self.browserbase.load_urls(
             urls,
+            text_content,
             session_id,
             proxy,
-            text_content,
         )
 
         documents = []
