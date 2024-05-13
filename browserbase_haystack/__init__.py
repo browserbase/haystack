@@ -10,8 +10,19 @@ class BrowserbaseFetcher:
         self.browserbase = Browserbase(api_key=api_key)
 
     @component.output_types(documents=List[Document])
-    def run(self, urls: Sequence[str], text_content: bool = False):
-        pages = self.browserbase.load_urls(urls, text_content)
+    def run(
+        self,
+        urls: Sequence[str],
+        session_id: Optional[str] = None,
+        proxy: Optional[bool] = None,
+        text_content: bool = False,
+    ):
+        pages = self.browserbase.load_urls(
+            urls,
+            session_id,
+            proxy,
+            text_content,
+        )
 
         documents = []
         for i, page in enumerate(pages):
