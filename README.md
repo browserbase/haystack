@@ -59,6 +59,6 @@ result = pipe.run(data={"fetcher": {"urls": ["https://example.com"]}})
 ### Parameters
 
 - `urls` Required. A list of URLs to fetch
+- `text_content` Optional. Only return page text content
 - `session_id` Optional. The Session ID
 - `proxy` Optional. Enable Proxy
-- `text_content` Optional. Only return page text content

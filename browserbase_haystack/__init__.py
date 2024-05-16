@@ -6,8 +6,10 @@ from typing import Optional, List, Sequence
 
 @component
 class BrowserbaseFetcher:
-    def __init__(self, api_key: Optional[str] = None) -> None:
-        self.browserbase = Browserbase(api_key=api_key)
+    def __init__(
+        self, api_key: Optional[str] = None, project_id: Optional[str] = None
+    ) -> None:
+        self.browserbase = Browserbase(api_key=api_key, project_id=project_id)
 
     @component.output_types(documents=List[Document])
     def run(
